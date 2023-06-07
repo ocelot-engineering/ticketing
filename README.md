@@ -6,5 +6,6 @@ A marketplace for users to buy and sell tickets.
 
 ```
 minikube start
-skaffold dev
+minikube addons enable ingress
+skaffold dev --trigger polling
 ```
