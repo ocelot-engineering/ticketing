@@ -8,11 +8,19 @@ build:
   local:
     push: false
   artifacts:
-    - image: parrot7910
+    - image: parrot7910/auth
       context: auth
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'
+            dest: .
+    - image: parrot7910/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
             dest: .
