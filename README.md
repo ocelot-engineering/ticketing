@@ -16,3 +16,11 @@ skaffold dev --trigger polling
 kubectl create secret generic jwt-secret --from-literal=<eg. JWT_KEY=secret>
 kubectl get secrets
 ```
+
+### NPM
+
+```
+npm init -y
+npm login
+npm publish --access public
+```
