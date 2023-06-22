@@ -23,4 +23,6 @@ kubectl get secrets
 npm init -y
 npm login
 npm publish --access public
+npm version patch
+npm run pub
 ```
