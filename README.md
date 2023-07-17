@@ -10,6 +10,12 @@ minikube addons enable ingress
 skaffold dev --trigger polling
 ```
 
+### Kubernetes
+
+```
+kubectl port-forward <pod-name> <machine-port>:<pod-port>
+```
+
 ### Secret
 
 ```
