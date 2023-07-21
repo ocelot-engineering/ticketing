@@ -15,7 +15,12 @@ client.on('connect', () => {
         process.exit();
     });
 
-    const options = client.subscriptionOptions().setManualAckMode(true);
+    const options = client
+        .subscriptionOptions()
+        .setManualAckMode(true)
+        .setDeliverAllAvailable()
+        .setDurableName('orders-service');
+
     const subscription = client.subscribe(
         'ticket:created',
         'orders-service-queue-group',
