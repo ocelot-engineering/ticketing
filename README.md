@@ -13,6 +13,7 @@ skaffold dev --trigger polling
 ### Kubernetes
 
 ```
+kubectl get pods
 kubectl port-forward <pod-name> <machine-port>:<pod-port>
 ```
 
