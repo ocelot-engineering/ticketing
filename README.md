@@ -33,3 +33,17 @@ npm publish --access public
 npm version patch
 npm run pub
 ```
+
+### Local deployment with devcontainer
+
+```
+minikube start
+minikube addons enable ingress
+kubectl create secret generic jwt-secret --from-literal=<eg. JWT_KEY=secret>
+skaffold dev --trigger polling
+
+# make sure devcontainer ports are forwarded
+minikube ip
+kubectl get service --all-namespaces
+# update devcontainer port forwarding via vs code
+```
