@@ -37,9 +37,11 @@ npm run pub
 ### Local deployment with devcontainer
 
 ```
+minikube delete --all --purge
+
 minikube start
 minikube addons enable ingress
-kubectl create secret generic jwt-secret --from-literal=<eg. JWT_KEY=secret>
+kubectl create secret generic jwt-secret --from-literal <eg. JWT_KEY=secret>
 skaffold dev --trigger polling
 
 # make sure devcontainer ports are forwarded
