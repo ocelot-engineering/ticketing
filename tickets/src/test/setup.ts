@@ -1,12 +1,16 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import request from 'supertest';
-import { app } from '../app';
 import jwt from 'jsonwebtoken';
 
 declare global {
     var signin: () => string[];
 }
+
+// Workaround for updateIfCurrentPlugin issues
+Object.defineProperty(global, 'structuredClone', {
+    writable: true,
+    configurable: true,
+});
 
 jest.mock('../nats-wrapper');
 

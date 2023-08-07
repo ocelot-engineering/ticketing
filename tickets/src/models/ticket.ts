@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
-// import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
-// using optimisticConcurrency option in schema in place of updateIfCurrentPlugin.
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 interface TicketAttrs {
     title: string;
@@ -42,12 +41,11 @@ const ticketSchema = new mongoose.Schema(
             },
         },
         versionKey: 'version',
-        optimisticConcurrency: true,
+        // optimisticConcurrency: true, // alternative to updateIfCurrentPlugin
     }
 );
 
-// ticketSchema.set('versionKey', 'version');
-// ticketSchema.plugin(updateIfCurrentPlugin);
+ticketSchema.plugin(updateIfCurrentPlugin);
 
 ticketSchema.statics.build = (attrs: TicketAttrs) => {
     return new Ticket(attrs);

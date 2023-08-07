@@ -15,6 +15,7 @@ skaffold dev --trigger polling
 ```
 kubectl get pods
 kubectl port-forward <pod-name> <machine-port>:<pod-port>
+kubectl -it exec <pod name with mongo db> -- mongosh
 ```
 
 ### Secret
