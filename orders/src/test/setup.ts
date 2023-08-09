@@ -6,6 +6,12 @@ declare global {
     var signin: () => string[];
 }
 
+// Workaround for updateIfCurrentPlugin issues
+Object.defineProperty(global, 'structuredClone', {
+    writable: true,
+    configurable: true,
+});
+
 jest.mock('../nats-wrapper');
 
 let mongo: any;
