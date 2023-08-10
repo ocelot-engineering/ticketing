@@ -5,7 +5,7 @@ import { TicketCreatedListener } from '../ticket-created-listener';
 import { natsWrapper } from '../../../nats-wrapper';
 import { Ticket } from '../../../models/ticket';
 
-const steup = async () => {
+const setup = async () => {
     // create an instance of the listener
     const listener = new TicketCreatedListener(natsWrapper.client);
 
@@ -28,7 +28,7 @@ const steup = async () => {
 };
 
 it('creates and saves a ticket', async () => {
-    const { listener, data, msg } = await steup();
+    const { listener, data, msg } = await setup();
 
     // call the onMessage function with the data object + message object
     await listener.onMessage(data, msg);
@@ -42,7 +42,7 @@ it('creates and saves a ticket', async () => {
 });
 
 it('acks the message', async () => {
-    const { listener, data, msg } = await steup();
+    const { listener, data, msg } = await setup();
 
     // call the onMessage function with the data object + message object
     await listener.onMessage(data, msg);
