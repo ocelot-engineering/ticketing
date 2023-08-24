@@ -8,6 +8,7 @@ import {
     NotAuthorisedError,
     OrderStatus,
 } from '@wizard4571/common';
+import { stripe } from '../stripe';
 import { Order } from '../models/order';
 
 const router = express.Router();
@@ -19,7 +20,6 @@ router.post(
     validateRequest,
     async (req: Request, res: Response) => {
         const { token, orderId } = req.body;
-
         const order = await Order.findById(orderId);
 
         if (!order) {
@@ -33,6 +33,12 @@ router.post(
         if (order.status == OrderStatus.Cancelled) {
             throw new BadRequestError('Cannot pay for a cancelled order');
         }
+
+        await stripe.charges.create({
+            currency: 'gbp',
+            amount: order.price * 100,
+            source: token,
+        });
 
         res.send({ success: true });
     }

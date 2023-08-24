@@ -21,7 +21,8 @@ kubectl -it exec <pod name with mongo db> -- mongosh
 ### Secret
 
 ```
-kubectl create secret generic jwt-secret --from-literal=<eg. JWT_KEY=secret>
+kubectl create secret generic jwt-secret --from-literal <eg. JWT_KEY=secret>
+kubectl create secret generic stripe-secret --from-literal <eg. STRIPE_KEY=secret>
 kubectl get secrets
 ```
 
