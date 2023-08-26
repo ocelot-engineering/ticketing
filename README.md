@@ -51,3 +51,9 @@ minikube ip
 kubectl get service --all-namespaces
 # update devcontainer port forwarding via vs code
 ```
+
+### gcloud
+
+```
+gcloud container clusters get-credentials <cluster-name>
+```
