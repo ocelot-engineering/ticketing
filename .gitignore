@@ -131,3 +131,10 @@ dist
 
 # skaffold
 skaffold
+
+# Google Cloud
+google-cloud-sdk
+google-cloud-sdk.staging
+
+# tars
+*.tar.gz

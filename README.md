@@ -16,6 +16,8 @@ skaffold dev --trigger polling
 kubectl get pods
 kubectl port-forward <pod-name> <machine-port>:<pod-port>
 kubectl -it exec <pod name with mongo db> -- mongosh
+kubectl config get-contexts
+kubectl config set-context <contextname>
 ```
 
 ### Secret
