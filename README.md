@@ -59,3 +59,10 @@ kubectl get service --all-namespaces
 ```
 gcloud container clusters get-credentials <cluster-name>
 ```
+
+### Installing gke-gcloud-auth-plugin
+
+```
+gcloud components install gke-gcloud-auth-plugin
+gke-gcloud-auth-plugin --version
+```
