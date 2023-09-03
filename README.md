@@ -17,6 +17,7 @@ kubectl get pods
 kubectl port-forward <pod-name> <machine-port>:<pod-port>
 kubectl -it exec <pod name with mongo db> -- mongosh
 kubectl config get-contexts
+kubectl config current-context
 kubectl config set-context <contextname>
 ```
 
@@ -58,11 +59,4 @@ kubectl get service --all-namespaces
 
 ```
 gcloud container clusters get-credentials <cluster-name>
-```
-
-### Installing gke-gcloud-auth-plugin
-
-```
-gcloud components install gke-gcloud-auth-plugin
-gke-gcloud-auth-plugin --version
 ```

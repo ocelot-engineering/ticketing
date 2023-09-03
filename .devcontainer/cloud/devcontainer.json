@@ -13,7 +13,6 @@
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
         "ghcr.io/devcontainers/features/python:1": {}
     },
 
@@ -21,7 +20,7 @@
     // "forwardPorts": [],
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "bash ./.devcontainer/post-create.sh"
+    "postCreateCommand": "bash ./.devcontainer/cloud/post-create.sh"
 
     // Configure tool-specific properties.
     // "customizations": {},
