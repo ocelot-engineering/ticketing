@@ -41,6 +41,9 @@ npm run pub
 
 ### Local deployment with devcontainer
 
+1. Make sure all images in `infra/k8s/*.-depl.yaml` point to a docker hub image. (e.g. `parrot7910/auth`)
+2. Then run the following:
+
 ```
 minikube delete --all --purge
 
@@ -56,6 +59,12 @@ kubectl get service --all-namespaces
 ```
 
 ### gcloud
+
+This assumes a cluster is already available on GCP, and that all configurations are appropriate.
+
+1. Follow the steps of `gcloud init` which is triggered in the post create of the devcontainer.
+2. Install Ingress Nginx on the cluster
+3. Run the following to connect to cluster:
 
 ```
 gcloud container clusters get-credentials <cluster-name>

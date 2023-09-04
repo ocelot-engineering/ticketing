@@ -25,3 +25,14 @@ sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 
 # 5. Init gcloud - requires user inputs
 gcloud init
+
+
+# Install Ingress Nginx on remote cluster
+
+# 1. Get cluster admin permissions on the cluster
+kubectl create clusterrolebinding cluster-admin-binding \
+  --clusterrole cluster-admin \
+  --user $(gcloud config get-value account)
+
+# 2. Install ingress controller
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
