@@ -69,3 +69,10 @@ This assumes a cluster is already available on GCP, and that all configurations 
 ```
 gcloud container clusters get-credentials <cluster-name>
 ```
+
+4. Set up secrets with kubectl
+5. run skaffold
+
+```
+skaffold dev --trigger polling
+```
