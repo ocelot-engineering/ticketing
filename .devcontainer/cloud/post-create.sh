@@ -3,6 +3,9 @@ curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffo
 sudo install skaffold /usr/local/bin/
 rm skaffold
 
+# Copy skaffold config
+cp -p ./.devcontainer/cloud/skaffold.yaml skaffold.yaml
+
 
 # Install Google Cloud CLI - steps from https://cloud.google.com/sdk/docs/install#deb
 

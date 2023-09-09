@@ -138,3 +138,6 @@ google-cloud-sdk.staging
 
 # tars
 *.tar.gz
+
+# skaffold.yaml is ignored since it is copied from .devcontainer/ depending on the dev environment
+/skaffold.yaml
