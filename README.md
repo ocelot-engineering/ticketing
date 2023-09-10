@@ -105,4 +105,20 @@ minikube delete --all --purge
 
 ### Cloud deployment issues
 
-Assuming GCP configuration is correct, cloud issues can usually be resolved by rebuilding the devcontainer.
+-   Assuming GCP configuration is correct, cloud issues can usually be resolved by rebuilding the devcontainer.
+-   Webhook error fix, run:
+
+```
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+```
+
+-   "client-side throttling, not priority and fairness" - may have run `skaffold dev` twice
+
+-   "Does not have minimum availability"
+
+    -   Can be caused by insufficent CPU or Memory, but usually more analysis is needed. [source](https://devops.stackexchange.com/questions/3980/what-does-does-not-have-minimum-availability-in-k8s-mean)
+    -   If this occurs, you can wait for the pods to regenerate on a different node.
+    -   Otherwise consider increasing the specs of the machine type of the pool.
+
+-   "CreateContainerConfigError"
+    -   make sure secrets are available.
