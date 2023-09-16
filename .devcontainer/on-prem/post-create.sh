@@ -4,4 +4,4 @@ sudo install skaffold /usr/local/bin/
 rm skaffold
 
 # Copy skaffold config
-cp -p ./.devcontainer/cloud/skaffold.yaml skaffold.yaml
+cp -p ./.devcontainer/on-prem/skaffold.yaml skaffold.yaml
