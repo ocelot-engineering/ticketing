@@ -2,6 +2,12 @@
 
 A marketplace for users to buy and sell tickets.
 
+## Testing
+
+### Stripe
+
+-   Can test with a card numbers meantioned on https://stripe.com/docs/testing
+
 ## Dev container
 
 -   There are 2 configurations, on-prem and cloud.
