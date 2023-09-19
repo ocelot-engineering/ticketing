@@ -26,6 +26,10 @@ kubectl -it exec <pod name with mongo db> -- mongosh
 kubectl config get-contexts
 kubectl config current-context
 kubectl config set-context <contextname>
+kubectl cluster-info
+kubectl version
+kubectl get nodes
+kubectl help
 ```
 
 ### K8s secrets
@@ -99,6 +103,17 @@ skaffold dev
 #### Cloud notes
 
 -   Must go to `ticketing.dev` rather than the ip directly as it is defined as the host in `ingress-srv.yaml`.
+
+#### Digital Ocean
+
+##### doctl
+
+```
+doctl auth init --context <NAME>
+doctl auth list
+doctl auth switch --context <NAME>
+doctl account get
+```
 
 ## Troubleshooting
 
