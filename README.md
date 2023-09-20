@@ -106,6 +106,8 @@ skaffold dev
 
 #### Digital Ocean
 
+- Must make sure to follow this when setting up: [Ingress Nginx Digital Ocean Installation](https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean)
+
 ##### doctl
 
 ```
@@ -117,7 +119,7 @@ doctl account get
 
 ## Troubleshooting
 
-### Local deployment issues
+### Local dev environment issues
 
 If not a typo, then usually a minikube problem. Run below then try again:
 
@@ -125,7 +127,7 @@ If not a typo, then usually a minikube problem. Run below then try again:
 minikube delete --all --purge
 ```
 
-### Cloud deployment issues
+### Cloud dev environment issues
 
 -   Assuming GCP configuration is correct, cloud issues can usually be resolved by rebuilding the devcontainer.
 -   Webhook error fix, run:
