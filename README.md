@@ -106,7 +106,9 @@ skaffold dev
 
 #### Digital Ocean
 
-- Must make sure to follow this when setting up: [Ingress Nginx Digital Ocean Installation](https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean)
+-   Make sure to create secrets (see above)
+-   Must make sure to follow this when setting up: [Ingress Nginx Digital Ocean Installation](https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean)
+-   Make sure DNS record points to load balancer after it is created
 
 ##### doctl
 
